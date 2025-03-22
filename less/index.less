@@ -1,0 +1,80 @@
+.index-home {
+  padding: 0 1.33333vmin;
+  // background-color: black;
+  overflow: hidden;
+  margin-top: 22.5vmin;
+  display: flex;
+  flex-wrap: wrap;
+
+  .index-homeCardBox {
+    width: 50%;
+    padding: 2.13333vmin 1.33333vmin;
+    // background-color: pink;
+
+    .index-homeCardBoxTop {
+      border-radius: 0.53333vmin;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .index-homeCardBoxTopIconBox {
+        padding: 1.33333vmin 1.6vmin;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 3.2vmin;
+        width: 100%;
+        z-index: 20;
+        color: #fff;
+
+        .index-homeCardBoxTopIcon1 {
+          display: flex;
+          align-items: center;
+
+          svg {
+            line-height: 4.26667vmin;
+            height: 3.2vmin;
+            width: 3.2vmin;
+          }
+
+          line-height: 4.26667vmin;
+          color: #fff;
+        }
+
+        .index-homeCardBoxTopIcon2 {
+          display: flex;
+          align-items: center;
+
+          svg {
+            height: 3.2vmin;
+            width: 3.2vmin;
+            line-height: 4.26667vmin;
+          }
+
+          line-height: 4.26667vmin;
+          color: #fff;
+        }
+      }
+
+    }
+
+    .index-homeCardBoxBottom {
+      overflow: hidden;
+      font-size: 3.2vmin;
+      color: #212121;
+      line-height: 4.53333vmin;
+      margin-top: 1.6vmin;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
