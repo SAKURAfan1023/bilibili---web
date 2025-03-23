@@ -12,7 +12,7 @@
 
   let move = 0
   container.addEventListener('touchmove', function (e) {
-
+    moveLine.style.transition = 'all 0s'
     move = e.touches[0].clientX - start
     if (move + endX < 0 && move + endX > -1510) {
       length.style.transform = `translateX(${move + endX}px)`
@@ -44,6 +44,7 @@
   list.addEventListener('click', function (e) {
 
     if (e.target.tagName === 'A') {
+      moveLine.style.transition = 'all 0.2s ease-out'
       moveLine.style.width = `${e.target.offsetWidth}px`
       moveLine.style.transform = `translateX(${e.target.getBoundingClientRect().left}px)`
       temp = e.target.offsetLeft

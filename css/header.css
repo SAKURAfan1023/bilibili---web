@@ -47,6 +47,10 @@
   justify-content: center;
   align-items: center;
 }
+.index-headBox .header .headerRight .headerRightSearch svg {
+  min-width: 5.86667vmin;
+  min-height: 5.86667vmin;
+}
 .index-headBox .header .headerRight .headerRightLog {
   width: 6.4vmin;
   height: 6.4vmin;
