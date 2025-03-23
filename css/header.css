@@ -94,7 +94,10 @@
   justify-content: space-between;
   align-items: center;
 }
-.index-headBox .navigation ul.navigationTitle {
+.index-headBox .navigation .navigationTitleList {
+  overflow: hidden;
+}
+.index-headBox .navigation .navigationTitleList ul.navigationTitle {
   text-align: center;
   height: 100%;
   white-space: nowrap;
@@ -102,16 +105,20 @@
   align-items: center;
   display: flex;
   list-style: none;
-  overflow: hidden;
+  touch-action: none;
+  touch-action: pan-x;
 }
-.index-headBox .navigation ul.navigationTitle li {
+.index-headBox .navigation .navigationTitleList ul.navigationTitle li {
   font-size: 3.73333vmin;
   padding: 0 4.26667vmin;
 }
 .index-headBox .navigation .navigationIcon {
+  float: right;
+  background-color: #fff;
   color: #aaa;
   margin: 0 2.66667vmin;
   margin-top: 1.3333vmin;
+  z-index: 20;
 }
 .index-headBox .moveUnderline {
   margin-top: -0.4vmin;

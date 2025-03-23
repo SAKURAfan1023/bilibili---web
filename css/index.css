@@ -1,9 +1,15 @@
+html {
+  touch-action: none;
+  touch-action: pan-y;
+}
 .index-home {
   padding: 0 1.33333vmin;
   overflow: hidden;
   margin-top: 22.5vmin;
   display: flex;
   flex-wrap: wrap;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 .index-home .index-homeCardBox {
   width: 50%;

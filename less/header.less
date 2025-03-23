@@ -107,26 +107,35 @@
     justify-content: space-between;
     align-items: center;
 
-    ul.navigationTitle {
-      text-align: center;
-      height: 100%;
-      white-space: nowrap;
-      justify-content: space-around;
-      align-items: center;
-      display: flex;
-      list-style: none;
+    .navigationTitleList {
       overflow: hidden;
 
-      li {
-        font-size: 3.73333vmin;
-        padding: 0 4.26667vmin;
+      ul.navigationTitle {
+        text-align: center;
+        height: 100%;
+        white-space: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        display: flex;
+        list-style: none;
+        touch-action: none;
+        touch-action: pan-x;
+
+        li {
+          font-size: 3.73333vmin;
+          padding: 0 4.26667vmin;
+        }
       }
     }
 
+
     .navigationIcon {
+      float: right;
+      background-color: #fff;
       color: #aaa;
       margin: 0 2.66667vmin;
       margin-top: 1.3333vmin;
+      z-index: 20;
     }
   }
 
