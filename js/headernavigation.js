@@ -1,32 +1,55 @@
-const length = document.querySelector('.navigationTitle')
-const container = document.querySelector('.navigation')
+(function () {
+  const length = document.querySelector('.navigationTitle')
+  const container = document.querySelector('.navigation')
+  const list = document.querySelector('.navigationTitleList')
+  const moveLine = document.querySelector('.moveUnderline')
 
+  let start = 0
+  container.addEventListener('touchstart', function (e) {
 
-let start = 0
-container.addEventListener('touchstart', function (e) {
+    start = e.touches[0].clientX
+  })
 
-  start = e.touches[0].clientX
-})
+  let move = 0
+  container.addEventListener('touchmove', function (e) {
 
-let move = 0
-container.addEventListener('touchmove', function (e) {
+    move = e.touches[0].clientX - start
+    if (move + endX < 0 && move + endX > -1510) {
+      length.style.transform = `translateX(${move + endX}px)`
+      moveLine.style.transform = `translateX(${move + endX + temp}px)`
 
-  move = e.touches[0].clientX - start
-  console.log(move);
-  console.log(endX);
+    } else if (move + endX < -1510) {
+      length.style.transform = `translateX(${-1510}px)`
+      moveLine.style.transform = `translateX(${-1510 + temp}px)`
 
-  // length.style.transform = `translateX(${move + endX}px)`
-  if (move + endX < 0 && move + endX > -1510) {
-    length.style.transform = `translateX(${move + endX}px)`
-  } else if (move + endX < -1510) {
-    length.style.transform = `translateX(${-1510}px)`
-  } else if (move + endX >= 0) {
-    move = 0
-    endX = 0
-  }
-})
+    } else if (move + endX >= 0) {
+      length.style.transform = `translateX(0px)`
+      moveLine.style.transform = `translateX(${temp}px)`
 
-let endX = 0
-container.addEventListener('touchend', function (e) {
-  endX = move + endX
-})
+      move = 0
+      endX = 0
+    }
+  })
+
+  let endX = 0
+  container.addEventListener('touchend', function (e) {
+    if (move !== 0) {
+      endX = move + endX
+      move = 0
+    }
+  })
+
+  let temp = 0
+
+  list.addEventListener('click', function (e) {
+
+    if (e.target.tagName === 'A') {
+      moveLine.style.width = `${e.target.offsetWidth}px`
+      moveLine.style.transform = `translateX(${e.target.getBoundingClientRect().left}px)`
+      temp = e.target.offsetLeft
+
+      // moveLine.style.transition = 'none'
+    }
+  })
+
+})()

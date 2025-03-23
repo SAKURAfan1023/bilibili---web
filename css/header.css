@@ -108,7 +108,7 @@
   touch-action: none;
   touch-action: pan-x;
 }
-.index-headBox .navigation .navigationTitleList ul.navigationTitle li {
+.index-headBox .navigation .navigationTitleList ul.navigationTitle a {
   font-size: 3.73333vmin;
   padding: 0 4.26667vmin;
 }
@@ -124,11 +124,11 @@
   margin-top: -0.4vmin;
   color: #212121;
   background-color: #fb7299;
-  width: 11.73327vmin;
+  width: 15.99536542vmin;
   height: 0.5vmin;
-  transform: translateX(2.26667vmin);
   z-index: 20;
   border-radius: 0.5vmin;
+  transition: all 0.2s ease-out;
 }
 .index-headerHr {
   width: 100%;
