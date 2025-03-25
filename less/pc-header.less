@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bannerAnimate {
+  width: 100%;
+  margin: 0 auto;
+  min-width: 1000px;
+  min-height: 155px;
+  max-height: 240px;
+  height: 9.375vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .layer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img[data-name='4'] {
+      position: absolute;
+      top: -1vw;
+    }
+
+    img[data-name='8'] {
+      position: absolute;
+      top: 0.5vw;
+    }
+
+    img[data-name='13'] {
+      position: absolute;
+      left: 2vw;
+    }
+
+    img[data-name='17'] {
+      position: absolute;
+      right: -3vw;
+    }
+
+    img[data-name='20'] {
+      position: absolute;
+      left: -3vw;
+    }
+
+    img[data-name='22'] {
+      position: absolute;
+      right: -3vw;
+    }
+
+    // img[data-id='17'] {
+    //   display: none;
+    // }
+  }
+}
