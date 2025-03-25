@@ -11,49 +11,49 @@
     const arr = [
       {
         title: '少看一集都剪不出来',
-        src: '../img/index-homepage/少看一集都剪不出来.webp',
+        src: '../img/m-index-homepage/少看一集都剪不出来.webp',
         views: '38.4万',
         bullet: '185'
       },
       {
         title: '新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式',
-        src: '../img/index-homepage/新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式.webp',
+        src: '../img/m-index-homepage/新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式.webp',
         views: '60.3万',
         bullet: '5923'
       },
       {
         title: '重生后，才发现校花也喜欢我【超长电影版】',
-        src: '../img/index-homepage/重生后，才发现校花也喜欢我【超长电影版】.webp',
+        src: '../img/m-index-homepage/重生后，才发现校花也喜欢我【超长电影版】.webp',
         views: '270.0万',
         bullet: '1.6万'
       },
       {
         title: '孩子们，我来将大局逆转！',
-        src: '../img/index-homepage/孩子们，我来将大局逆转！.webp',
+        src: '../img/m-index-homepage/孩子们，我来将大局逆转！.webp',
         views: '188.9万',
         bullet: '1523'
       },
       {
         title: '对他使用200万的岩拳吧，就当是为了黑土！',
-        src: '../img/index-homepage/对他使用200万的岩拳吧，就当是为了黑土！.webp',
+        src: '../img/m-index-homepage/对他使用200万的岩拳吧，就当是为了黑土！.webp',
         views: '71.3万',
         bullet: '590'
       },
       {
         title: '和姐妹来了传说中的xxxx一番街…还得是东京啊…！',
-        src: '../img/index-homepage/和姐妹来了传说中的xxxx一番街…还得是东京啊….webp',
+        src: '../img/m-index-homepage/和姐妹来了传说中的xxxx一番街…还得是东京啊….webp',
         views: '111.3万',
         bullet: '6214'
       },
       {
         title: '商场电视里放的HDR样片，竟然都是他拍的？',
-        src: '../img/index-homepage/商场电视里放的HDR样片，竟然都是他拍的？.webp',
+        src: '../img/m-index-homepage/商场电视里放的HDR样片，竟然都是他拍的？.webp',
         views: '16.0万',
         bullet: '1202'
       },
       {
         title: '《鸣潮》共鸣者战斗演示 | 坎特蕾拉',
-        src: '../img/index-homepage/《鸣潮》共鸣者战斗演示  坎特蕾拉.webp',
+        src: '../img/m-index-homepage/《鸣潮》共鸣者战斗演示  坎特蕾拉.webp',
         views: '16.0万',
         bullet: '1202'
       }
