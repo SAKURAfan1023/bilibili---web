@@ -1,3 +1,11 @@
+import imgPath3 from '@/assets/images/m/m-index-homepage/《鸣潮》共鸣者战斗演示  坎特蕾拉.webp'
+import imgPath4 from '@/assets/images/m/m-index-homepage/对他使用200万的岩拳吧，就当是为了黑土！.webp'
+import imgPath5 from '@/assets/images/m/m-index-homepage/孩子们，我来将大局逆转！.webp'
+import imgPath6 from '@/assets/images/m/m-index-homepage/和姐妹来了传说中的xxxx一番街…还得是东京啊….webp'
+import imgPath7 from '@/assets/images/m/m-index-homepage/商场电视里放的HDR样片，竟然都是他拍的？.webp'
+import imgPath8 from '@/assets/images/m/m-index-homepage/少看一集都剪不出来.webp'
+import imgPath9 from '@/assets/images/m/m-index-homepage/新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式.webp'
+import imgPath10 from '@/assets/images/m/m-index-homepage/重生后，才发现校花也喜欢我【超长电影版】.webp'
 (function () {
   const home = document.querySelector('.index-home')
 
@@ -11,53 +19,52 @@
     const arr = [
       {
         title: '少看一集都剪不出来',
-        src: '../../img/m-index-homepage/少看一集都剪不出来.webp',
+        src: imgPath8,
         views: '38.4万',
         bullet: '185'
       },
       {
         title: '新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式',
-        src: '../../img/m-index-homepage/新番时光机！十年前的观众都在看什么神片？「2015年1月篇」泛式.webp',
+        src: imgPath9,
         views: '60.3万',
         bullet: '5923'
       },
       {
         title: '重生后，才发现校花也喜欢我【超长电影版】',
-        src: '../../img/m-index-homepage/重生后，才发现校花也喜欢我【超长电影版】.webp',
+        src: imgPath10,
         views: '270.0万',
         bullet: '1.6万'
       },
       {
         title: '孩子们，我来将大局逆转！',
-        src: '../../img/m-index-homepage/孩子们，我来将大局逆转！.webp',
+        src: imgPath5,
         views: '188.9万',
         bullet: '1523'
       },
       {
         title: '对他使用200万的岩拳吧，就当是为了黑土！',
-        src: '../../img/m-index-homepage/对他使用200万的岩拳吧，就当是为了黑土！.webp',
+        src: imgPath4,
         views: '71.3万',
         bullet: '590'
       },
       {
         title: '和姐妹来了传说中的xxxx一番街…还得是东京啊…！',
-        src: '../../img/m-index-homepage/和姐妹来了传说中的xxxx一番街…还得是东京啊….webp',
+        src: imgPath6,
         views: '111.3万',
         bullet: '6214'
       },
       {
         title: '商场电视里放的HDR样片，竟然都是他拍的？',
-        src: '../../img/m-index-homepage/商场电视里放的HDR样片，竟然都是他拍的？.webp',
+        src: imgPath7,
         views: '16.0万',
         bullet: '1202'
       },
       {
         title: '《鸣潮》共鸣者战斗演示 | 坎特蕾拉',
-        src: '../../img/m-index-homepage/《鸣潮》共鸣者战斗演示  坎特蕾拉.webp',
+        src: imgPath3,
         views: '16.0万',
         bullet: '1202'
       }
-
     ]
     let length = arr.length
     for (let i = 0; i < length; i++) {

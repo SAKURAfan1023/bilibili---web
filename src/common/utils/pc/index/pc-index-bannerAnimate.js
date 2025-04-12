@@ -1,3 +1,4 @@
+
 //初始化引用
 const all = document.querySelectorAll('.layer img')
 
