@@ -1,7 +1,7 @@
 # 忽略npm下载的第三方包
 node_modules
 # 忽略分发文件夹
-dist
+# dist
 # 忽略VSCode配置文件
 .vscode
 # 忽略密钥文件
