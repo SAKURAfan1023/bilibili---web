@@ -7,12 +7,14 @@
 
 :root {
   --icon-size: 18px;
+  --cover-radio: 9/16;
 }
 
 @media (max-width: 1100px) {
   :root {
     --info-marginTop: 8px;
     --title-size: 15px;
+    --large-title: 18px;
     --title-line-hight: 22px
   }
 
@@ -26,6 +28,7 @@
   :root {
     --title-size: 15px;
     --subtitle-size: 13px;
+    --large-title: 18px;
     --info-marginTop: 8px;
     --title-line-hight: 22px
   }
@@ -39,6 +42,7 @@
 @media (min-width: 1367px) {
   :root {
     --title-size: 15px;
+    --large-title: 18px;
     --info-marginTop: 10px;
   }
 
@@ -49,9 +53,9 @@
 }
 
 @media (min-width: 1700px) {
-  // :root {
-
-  // }
+  :root {
+    --large-title: 20px;
+  }
 
   .pc-index-videoCards {
     padding: 0 140px;
@@ -63,6 +67,7 @@
   :root {
     --title-size: 16px;
     --subtitle-size: 14px;
+    --large-title: 20px;
     --title-line-hight: 24px
   }
 }
@@ -80,25 +85,48 @@
     grid-row-start: 1;
     grid-row-end: 3;
     overflow: hidden;
+    width: 100%;
+    position: relative;
+    aspect-ratio: 588.39/414.72;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     .pc-index-swiper-top {
+      aspect-ratio: 16/9;
+      width: 100%;
+      display: flex;
+      position: relative;
+      transition: transform 0.4s;
+
+
       img {
         width: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // z-index: -99px;
       }
     }
 
     .pc-index-swiper-bottom-text {
       color: #fff;
       text-decoration: none;
+      line-height: 25px;
+      height: 25px;
+      z-index: 99;
+      margin-left: 18px;
 
       span {
-        font-size: 20px;
+        font-size: var(--large-title);
       }
     }
 
     .pc-index-swiper-dotsList {
       list-style: none;
       display: flex;
+      z-index: 99;
+      margin-left: 22px;
 
       li {
         margin-right: 7px;
@@ -108,14 +136,53 @@
         background-color: #8f8782;
       }
     }
+
+    button {
+      position: absolute;
+      z-index: 999;
+      width: 28px;
+      height: 28px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      cursor: pointer;
+
+      svg {
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+    #nextImg {
+      bottom: 34px;
+      right: 30px;
+    }
+
+    #lastImg {
+      bottom: 34px;
+      right: 73px;
+    }
+
+    .pc-index-videoCards-bigCards-mask {
+      width: 100%;
+      aspect-ratio: 512/600;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      -webkit-mask-image: linear-gradient(0, #2f3238 11%, transparent 20%);
+      background-color: #f27aac;
+    }
   }
 
   .pc-index-videoCards-littleCards {
+    overflow: hidden;
+
     .pc-index-videoCards-littleCards-top {
       position: relative;
 
       .pc-index-videoCards-littleCards-img {
         width: 100%;
+        aspect-ratio: 16/9;
         border-radius: 5px;
         cursor: pointer;
       }
@@ -207,5 +274,31 @@
         color: #5ab6f1;
       }
     }
+  }
+
+  .pc-index-videoCards-lazyLoading {
+    width: 100%;
+    height: 0;
+    padding-bottom: calc(100% * 9 / 16);
+    position: relative;
+    overflow: hidden;
+
+    .pc-index-lazyLoading-container {
+      position: absolute;
+      height: 100%;
+      width: 400%;
+      background: linear-gradient(-45deg, #f1f2f3 25%, #ffffff 45%, #f1f2f3) 65%;
+      animation: skeleton-loading 1.2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(0%);
   }
 }
