@@ -23,14 +23,15 @@ const config = {
     template: path.resolve(__dirname, './src/pages/pc/index/pc-index.html'),
     filename: path.resolve(__dirname, './dist/pages/pc-index/index.html'),
     chunks: ['pc-index'],
-    UseCdn: process.env.NODE_ENV === 'production'
+    useCdn: process.env.NODE_ENV === 'production' // 示例条件
+
   }),
 
   new HtmlWebpackPlugin({
     template: path.resolve(__dirname, './src/pages/m/index/m-index.html'),
     filename: path.resolve(__dirname, './dist/pages/m-index/index.html'),
     chunks: ['m-index'],
-    UseCdn: process.env.NODE_ENV === 'production'
+    useCdn: process.env.NODE_ENV === 'production' // 示例条件
   }),
 
   new MiniCssExtractPlugin({
@@ -96,7 +97,7 @@ const config = {
                 }
               ]
             },
-            esModule: false
+            esModule: false,
           }
         }
       },
