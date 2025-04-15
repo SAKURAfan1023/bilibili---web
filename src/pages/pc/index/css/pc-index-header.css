@@ -172,10 +172,10 @@
   width: 100%;
   min-width: 181px;
   max-width: 500px;
-  background-color: #fff;
+  background-color: #dee6e8;
   padding: 0 48px 0 4px;
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid #dee6e8;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -190,6 +190,7 @@
   border: 2px solid transparent;
   font-size: 14px;
   padding: 0 8px;
+  background-color: #dee6e8;
 }
 .pc-index-largeHeader .pc-index-header .pc-index-centerSearch .pc-index-centerSearch-form .centerSearchText .text:focus {
   outline: none;
@@ -208,6 +209,10 @@
 .pc-index-largeHeader .pc-index-header .pc-index-centerSearch .pc-index-centerSearch-form .centerSearchSvg svg {
   width: 100%;
   height: 100%;
+}
+.pc-index-largeHeader .pc-index-header .pc-index-centerSearch .pc-index-centerSearch-form:hover {
+  border: 1px solid #dee6e8;
+  background-color: #fff;
 }
 .pc-index-largeHeader .pc-index-header .pc-index-header-right {
   list-style: none;
@@ -264,6 +269,21 @@
 .pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-upload div svg {
   height: 18px;
   width: 18px;
+}
+.pc-index-largeHeader .pc-index-fixedHeader {
+  position: fixed;
+  top: -64px;
+  background-color: #fff;
+  margin: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s;
+}
+.pc-index-largeHeader .pc-index-fixedHeader svg {
+  color: black;
+}
+.pc-index-largeHeader .pc-index-fixedHeader span {
+  color: black;
 }
 .pc-index-largeHeader .bannerAnimate {
   width: 100%;

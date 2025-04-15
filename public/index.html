@@ -30,20 +30,31 @@
 </head>
 
 <body>
-  <div class="box">
+  <!-- <div class="box">
     <button class="one">PC首页</button>
     <button class="two">M首页</button>
-  </div>
+  </div> -->
 
   <script>
-    document.querySelector('.one').addEventListener('click', () => {
-      location.href = 'http://localhost:8081/pages/pc-index/index.html'
-    })
+    // document.querySelector('.one').addEventListener('click', () => {
+    //   location.href = 'http://localhost:8081/pages/pc-index/index.html'
+    // })
 
-    document.querySelector('.two').addEventListener('click', () => {
-      location.href = 'http://localhost:8081/pages/m-index/index.html'
-    })
+    // document.querySelector('.two').addEventListener('click', () => {
+    //   location.href = 'http://localhost:8081/pages/m-index/index.html'
+    // })
+    // 为is_mobi 赋值，通过navigator.userAgent来检测设备是否为移动端，检测类型如下，是则为其赋值
 
+    let is_mobi = navigator.userAgent.toLowerCase().match(/(ipod|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+    console.log(is_mobi);
+
+    //if判断跳转，是移动端则 is_mobi=True 跳转
+
+    if (is_mobi) {
+      window.location.href = 'http://localhost:8081/pages/m-index/index.html';
+    } else {
+      window.location.href = 'http://localhost:8081/pages/pc-index/index.html'
+    }
   </script>
 </body>
 

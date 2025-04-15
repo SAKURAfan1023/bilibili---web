@@ -213,10 +213,10 @@
         width: 100%;
         min-width: 181px;
         max-width: 500px;
-        background-color: #fff;
+        background-color: #dee6e8;
         padding: 0 48px 0 4px;
         height: 40px;
-        border: 1px solid #fff;
+        border: 1px solid #dee6e8;
         border-radius: 6px;
         display: flex;
         align-items: center;
@@ -231,6 +231,7 @@
             border: 2px solid transparent;
             font-size: 14px;
             padding: 0 8px;
+            background-color: #dee6e8;
           }
 
           .text:focus {
@@ -254,6 +255,11 @@
             height: 100%;
           }
         }
+      }
+
+      .pc-index-centerSearch-form:hover {
+        border: 1px solid #dee6e8;
+        background-color: #fff;
       }
     }
 
@@ -320,6 +326,24 @@
           }
         }
       }
+    }
+  }
+
+  .pc-index-fixedHeader {
+    position: fixed;
+    top: -64px;
+    background-color: #fff;
+    margin: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: all 0.3s;
+
+    svg {
+      color: black;
+    }
+
+    span {
+      color: black;
     }
   }
 
