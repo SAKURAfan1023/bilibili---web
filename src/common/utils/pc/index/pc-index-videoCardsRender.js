@@ -8,8 +8,6 @@ import fifthImg from '@/assets/images/pc/pc-index-videoCards/5.webp'
 
 
 
-
-
 const videoInformation = [
   {
     img: firstImg,
@@ -110,10 +108,143 @@ const videoInformation = [
     up: '帕姆的收藏夹',
     time: '·20小时前',
   },
+  {
+    img: secondImg,
+    views: '70.5万',
+    bullets: '1.1万',
+    during: '02:59',
+    title: '虚一直构|《重生之星河棒影》',
+    up: '帕姆的收藏夹',
+    time: '·20小时前',
+  },
+  {
+    img: firstImg,
+    views: '16.9万',
+    bullets: '4708',
+    during: '02:34',
+    title: '3！2！1！Mirror Tune☆',
+    up: '土埋了半截的人',
+    time: '·20小时前',
+  },
+  {
+    img: fifthImg,
+    views: '4万',
+    bullets: '39',
+    during: '01:15',
+    title: '他们朝我扔',
+    up: '含栗QAQ',
+    time: '·昨天',
+  },
+  {
+    img: forthImg,
+    views: '47.9万',
+    bullets: '394',
+    during: '01:22',
+    title: '澄清一下',
+    up: '-阿迪啊阿迪-',
+    time: '·4-14',
+  },
+  {
+    img: thirdImg,
+    views: '54.5万',
+    bullets: '1560',
+    during: '19:54',
+    title: '《圣经》？P经！',
+    up: '龙三条',
+    time: '·4-10',
+  },
 ]
 
-export function render() {
-  videoInformation.forEach(item => {
+const lgVideoInformation = [
+  {
+    img: firstImg,
+    views: '16.9万',
+    bullets: '4708',
+    during: '02:34',
+    title: '3！2！1！Mirror Tune☆',
+    up: '土埋了半截的人',
+    time: '·20小时前',
+  },
+  {
+    img: secondImg,
+    views: '70.5万',
+    bullets: '1.1万',
+    during: '02:59',
+    title: '虚一直构|《重生之星河棒影》',
+    up: '帕姆的收藏夹',
+    time: '·20小时前',
+  },
+  {
+    img: thirdImg,
+    views: '54.5万',
+    bullets: '1560',
+    during: '19:54',
+    title: '《圣经》？P经！',
+    up: '龙三条',
+    time: '·4-10',
+  },
+  {
+    img: forthImg,
+    views: '47.9万',
+    bullets: '394',
+    during: '01:22',
+    title: '澄清一下',
+    up: '-阿迪啊阿迪-',
+    time: '·4-14',
+  },
+  {
+    img: fifthImg,
+    views: '4万',
+    bullets: '39',
+    during: '01:15',
+    title: '他们朝我扔',
+    up: '含栗QAQ',
+    time: '·昨天',
+  },
+]
+
+const smVideoInformation = [
+  {
+    img: firstImg,
+    views: '16.9万',
+    bullets: '4708',
+    during: '02:34',
+    title: '3！2！1！Mirror Tune☆',
+    up: '土埋了半截的人',
+    time: '·20小时前',
+  },
+  {
+    img: secondImg,
+    views: '70.5万',
+    bullets: '1.1万',
+    during: '02:59',
+    title: '虚一直构|《重生之星河棒影》',
+    up: '帕姆的收藏夹',
+    time: '·20小时前',
+  },
+  {
+    img: thirdImg,
+    views: '54.5万',
+    bullets: '1560',
+    during: '19:54',
+    title: '《圣经》？P经！',
+    up: '龙三条',
+    time: '·4-10',
+  },
+  {
+    img: forthImg,
+    views: '47.9万',
+    bullets: '394',
+    during: '01:22',
+    title: '澄清一下',
+    up: '-阿迪啊阿迪-',
+    time: '·4-14',
+  },
+]
+
+//页面初始化渲染
+export function render(video) {
+  video.forEach(item => {
     const div = document.createElement('div')
     div.classList.add('pc-index-videoCards-littleCards')
 
@@ -184,9 +315,23 @@ export function render() {
           </div>
         </div>
   `
-    document.querySelector('.pc-index-videoCards-bigCards').after(div)
+    if (document.querySelectorAll('.pc-index-videoCards-littleCards').length != 0) {
+      let num = document.querySelectorAll('.pc-index-videoCards-littleCards').length
+      document.querySelectorAll('.pc-index-videoCards-littleCards')[num - 1].after(div)
+    } else {
+      document.querySelector('.pc-index-videoCards-bigCards').after(div)
+    }
   })
 }
 
-render()
+// 大屏幕懒加载渲染
+export function lgLoadRender() {
+  render(lgVideoInformation)
+}
+
+export function smLoadRender() {
+  render(smVideoInformation)
+}
+
+render(videoInformation)
 

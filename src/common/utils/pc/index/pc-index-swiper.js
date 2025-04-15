@@ -2,6 +2,8 @@ const imgContainer = document.querySelector('.pc-index-swiper-top')
 const container = document.querySelector('.pc-index-videoCards-bigCards')
 const color = document.querySelector('.pc-index-videoCards-bigCards-mask')
 const title = document.querySelector('.pc-index-swiper-bottom-text')
+const dots = document.querySelectorAll('.pc-index-swiper-dotsList li')
+
 let items = document.querySelectorAll('.pc-index-swiper-top>*')
 let width = 0
 let isAnimating = false
@@ -41,6 +43,7 @@ function rightSwipe() {
   imgNum++
   changeColor()
   changeTitle()
+  changeDot()
   imgContainer.style.transition = 'transform 0.4s'
   imgContainer.style.transform = `translateX(-${width * imgNum}px)`
   if (imgNum === items.length - 1) {
@@ -59,6 +62,7 @@ function leftSwipe() {
   imgContainer.style.transform = `translateX(-${width * imgNum}px)`
   changeColor()
   changeTitle()
+  changeDot()
   if (imgNum === 0) {
     setTimeout(resetPosition, 400)
   }
@@ -89,6 +93,21 @@ function changeTitle() {
   if (imgNum === 6) { title.href = '#'; title.innerHTML = '<span>辣椒：一种“不存在的”痛快滋味</span>' }
   if (imgNum === 7) { title.href = '#'; title.innerHTML = '<span>猫猫有什么坏心思呢？</span>' }
   if (imgNum === 8) { title.href = '#'; title.innerHTML = '<span>淡妆？浓抹？阁主真有格调</span>' }
+}
+
+function changeDot() {
+  for (let i = 0; i < dots.length; i++) {
+    if (dots[i].classList.contains('pc-index-swiper-active')) dots[i].classList.remove('pc-index-swiper-active')
+  }
+  if (imgNum === 1 || imgNum === 10) { dots[0].classList.add('pc-index-swiper-active') }
+  if (imgNum === 0 || imgNum === 9) dots[8].classList.add('pc-index-swiper-active')
+  if (imgNum === 2) dots[1].classList.add('pc-index-swiper-active')
+  if (imgNum === 3) dots[2].classList.add('pc-index-swiper-active')
+  if (imgNum === 4) dots[3].classList.add('pc-index-swiper-active')
+  if (imgNum === 5) dots[4].classList.add('pc-index-swiper-active')
+  if (imgNum === 6) dots[5].classList.add('pc-index-swiper-active')
+  if (imgNum === 7) dots[6].classList.add('pc-index-swiper-active')
+  if (imgNum === 8) dots[7].classList.add('pc-index-swiper-active')
 }
 
 window.addEventListener('load', init);
@@ -130,6 +149,3 @@ container.addEventListener('mouseleave', () => {
     rightSwipe()
   }, 2500)
 })
-
-
-
