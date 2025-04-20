@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const observer = new IntersectionObserver(([entry]) => {
-    console.log(renderAc);
 
     if (renderAc) return
     renderAc = true

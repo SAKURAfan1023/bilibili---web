@@ -118,6 +118,210 @@
     font-size: 14px;
   }
 }
+.pc-loginMask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+.pc-loginMask .pc-login {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 820px;
+  height: 430px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: #fff;
+  background-image: url(../../../assets/images/logo/22_open.4ea5f239.png), url(../../../assets/images/logo/33_open.f7d7f655.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 100%, 100% 100%;
+  background-size: 14%;
+  padding: 52px 65px 29px 92px;
+}
+.pc-loginMask .pc-login .close-pc-login {
+  background-image: url(../../../assets/images/logo/close.a35a1809.svg);
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-position: center;
+  top: 29px;
+  right: 34px;
+}
+.pc-loginMask .pc-login .pc-login-left {
+  width: 173px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pc-loginMask .pc-login .pc-login-left .pc-login-left-title {
+  margin-bottom: 26px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #505050;
+  font-family: PingFang SC;
+}
+.pc-loginMask .pc-login .pc-login-left .pc-login-left-imgBorder {
+  width: 173px;
+  height: 173px;
+  border: 1px solid #e3e5e7;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pc-loginMask .pc-login .pc-login-left .pc-login-left-imgBorder img {
+  width: 160px;
+  height: 160px;
+}
+.pc-loginMask .pc-login .pc-login-left .pc-login-left-bottom {
+  margin-top: 18px;
+  font-size: 13px;
+  font-family: PingFang SC;
+  color: #505050;
+  font-weight: 500;
+  line-height: 19px;
+}
+.pc-loginMask .pc-login .pc-login-middle {
+  width: 1px;
+  background-color: #e3e5e7;
+  margin: 43px 44px 0 45px;
+  height: 228px;
+}
+.pc-loginMask .pc-login .pc-login-right {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-tab {
+  display: flex;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-tab span {
+  color: #505050;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-tab .pc-login-right-tab-middle {
+  width: 1px;
+  background-color: #e3e5e7;
+  margin: 0 21px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-tab .active {
+  color: #00AEEC;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input {
+  width: 100%;
+  height: 90px;
+  border: 1px solid #e3e5e7;
+  border-radius: 8px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-inputButton {
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-inputButton .pc-login-right-inputButton-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e3e5e7;
+  height: 100%;
+  width: 194px;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-inputButton .pc-login-right-inputButton-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e3e5e7;
+  height: 100%;
+  width: 194px;
+  background-color: #00AEEC;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+.pc-loginCard {
+  position: absolute;
+  width: 361px;
+  height: 236px;
+  bottom: -236px;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e3e5e7;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.pc-loginCard .pc-loginCard-content {
+  padding: 22px 20px 22px 20px;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content1 {
+  color: black;
+  margin-bottom: 15px;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content2 {
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content2 .pc-loginCard-content2-littleBox {
+  width: 159.5px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content2 .pc-loginCard-content2-littleBox svg {
+  width: 24px;
+  height: 24px;
+  fill: #00AEEC;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content2 .pc-loginCard-content2-littleBox span {
+  padding-left: 5px;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content3 {
+  width: 100%;
+  height: 40px;
+  background-color: #00AEEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 8px;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content3:hover {
+  background-color: #00b5e5;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content4 {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+.pc-loginCard .pc-loginCard-content .pc-loginCard-content4 span {
+  color: black;
+}
+.pc-loginCard-visible {
+  opacity: 1;
+  transform: translateY(5px);
+}
 .pc-index-largeHeader .pc-index-header {
   position: absolute;
   top: 0;
@@ -222,6 +426,7 @@
   min-width: 508px;
 }
 .pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-infPopover {
+  position: relative;
   cursor: pointer;
   display: flex;
   flex-direction: column;
