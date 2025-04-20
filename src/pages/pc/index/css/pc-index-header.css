@@ -124,6 +124,7 @@
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9998;
+  display: none;
 }
 .pc-loginMask .pc-login {
   display: flex;
@@ -150,6 +151,7 @@
   background-position: center;
   top: 29px;
   right: 34px;
+  cursor: pointer;
 }
 .pc-loginMask .pc-login .pc-login-left {
   width: 173px;
@@ -264,7 +266,7 @@
   bottom: -236px;
   opacity: 0;
   display: none;
-  transition: all 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border: 1px solid #e3e5e7;
   border-radius: 8px;
