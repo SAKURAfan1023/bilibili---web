@@ -257,6 +257,11 @@
 .pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .bottomLine {
   border-bottom: 1px solid #e3e5e7;
 }
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .bottomLine .pc-login-right-getCode {
+  padding-left: 20px;
+  border-left: 1px solid #d3d6d9;
+  color: #d3d6d9;
+}
 .pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-inputButton {
   margin-top: 20px;
   width: 100%;
