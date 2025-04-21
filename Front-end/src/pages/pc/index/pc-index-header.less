@@ -247,6 +247,7 @@
         font-size: 18px;
         line-height: 20px;
         margin-bottom: 24px;
+        cursor: pointer;
 
         span {
           color: #505050;
@@ -256,6 +257,7 @@
           width: 1px;
           background-color: #e3e5e7;
           margin: 0 21px;
+          cursor: default;
         }
 
         .active {
@@ -273,6 +275,39 @@
           height: 90px;
           border: 1px solid #e3e5e7;
           border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+
+
+          .pc-login-right-inputTop {
+            height: 44px;
+            padding: 12px 20px;
+            display: flex;
+            font-size: 14px;
+            color: black;
+            align-items: center;
+
+            span {
+              cursor: default;
+            }
+
+            input {
+              display: flex;
+              flex: 1 auto;
+              border: 0px solid #000;
+              height: 100%;
+              margin-left: 20px;
+            }
+
+            input:focus {
+              border: 0px solid #000;
+              outline: none;
+            }
+          }
+
+          .bottomLine {
+            border-bottom: 1px solid #e3e5e7;
+          }
         }
 
         .pc-login-right-inputButton {
@@ -310,6 +345,46 @@
         }
       }
 
+      .pc-login-right-otherWays {
+        height: 56px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #9499a0;
+        justify-content: space-between;
+
+        .pc-login-right-otherWays-button {
+          display: flex;
+          justify-content: center;
+
+          .pc-login-right-otherWays-button-part {
+            display: flex;
+            color: #9499a0;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 30px;
+
+            img {
+              width: 28px;
+              height: 28px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+    }
+
+    .pc-login-bottom {
+      position: absolute;
+      bottom: 33px;
+      left: 271px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #9499a0;
+      font-size: 13px;
     }
   }
 }

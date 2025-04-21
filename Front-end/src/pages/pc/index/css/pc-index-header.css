@@ -205,6 +205,7 @@
   font-size: 18px;
   line-height: 20px;
   margin-bottom: 24px;
+  cursor: pointer;
 }
 .pc-loginMask .pc-login .pc-login-right .pc-login-right-tab span {
   color: #505050;
@@ -213,6 +214,7 @@
   width: 1px;
   background-color: #e3e5e7;
   margin: 0 21px;
+  cursor: default;
 }
 .pc-loginMask .pc-login .pc-login-right .pc-login-right-tab .active {
   color: #00AEEC;
@@ -227,6 +229,33 @@
   height: 90px;
   border: 1px solid #e3e5e7;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .pc-login-right-inputTop {
+  height: 44px;
+  padding: 12px 20px;
+  display: flex;
+  font-size: 14px;
+  color: black;
+  align-items: center;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .pc-login-right-inputTop span {
+  cursor: default;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .pc-login-right-inputTop input {
+  display: flex;
+  flex: 1 auto;
+  border: 0px solid #000;
+  height: 100%;
+  margin-left: 20px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .pc-login-right-inputTop input:focus {
+  border: 0px solid #000;
+  outline: none;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-input .bottomLine {
+  border-bottom: 1px solid #e3e5e7;
 }
 .pc-loginMask .pc-login .pc-login-right .pc-login-right-inputTable .pc-login-right-inputButton {
   margin-top: 20px;
@@ -258,6 +287,41 @@
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-otherWays {
+  height: 56px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9499a0;
+  justify-content: space-between;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-otherWays .pc-login-right-otherWays-button {
+  display: flex;
+  justify-content: center;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-otherWays .pc-login-right-otherWays-button .pc-login-right-otherWays-button-part {
+  display: flex;
+  color: #9499a0;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.pc-loginMask .pc-login .pc-login-right .pc-login-right-otherWays .pc-login-right-otherWays-button .pc-login-right-otherWays-button-part img {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+.pc-loginMask .pc-login .pc-login-bottom {
+  position: absolute;
+  bottom: 33px;
+  left: 271px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9499a0;
+  font-size: 13px;
 }
 .pc-loginCard {
   position: absolute;
