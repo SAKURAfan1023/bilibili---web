@@ -6,7 +6,7 @@ import '@/common/utils/pc/index/pc-index-swiper.js'
 import '@/common/utils/pc/index/pc-index-iconJump.js'
 import '@/common/utils/pc/index/pc-index-fixedHeader.js'
 import '@/common/utils/pc/index/pc-index-moveToTop.js'
-import '@/common/utils/pc/index/pc-index-loginPop.js'
+import '@/common/utils/pc/pc-common/pc-loginPop.js'
 import '@/common/utils/pc/pc-common/pc-loginPage.js'
 
 
