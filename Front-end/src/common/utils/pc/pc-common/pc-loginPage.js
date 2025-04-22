@@ -76,7 +76,15 @@ function changeTheBackground() {
 
 login.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log(serialize(form1, { hash: true, empty: true }));
+  const data = serialize(form1, { hash: true, empty: true })
+  axios({
+    url: 'http://127.0.0.1/api/user/signin',
+    method: 'POST',
+    data
+  }).then((result) => {
+    console.log(result);
+
+  })
 })
 
 
