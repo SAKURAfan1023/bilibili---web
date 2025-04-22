@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mysql from 'mysql2'
 
-import user from '../router/login.js'
+import user from '../router/user-login.js'
 
 const app = express()
 const db = mysql.createPool({           //建立连接关系
