@@ -425,6 +425,7 @@
   border-radius: 8px;
   background-color: #fff;
   z-index: 999;
+  cursor: default;
 
   .pc-loginCard-content {
     padding: 22px 20px 22px 20px;
@@ -490,6 +491,169 @@
   width: 302px;
   height: 455px;
   bottom: -455px;
+  padding: 0px 24px 18px;
+  display: flex;
+
+  .pc-loginCard-nickName {
+    color: #fb7299;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .pc-loginCard-vipMember {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0px;
+
+    img {
+      width: 69px;
+      cursor: pointer;
+    }
+
+    .icon {
+      height: 20px;
+      padding: 3px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .pc-loginCard-coin {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+
+    span {
+      color: #9499a0;
+      cursor: pointer;
+    }
+  }
+
+  .pc-loginCard-countItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-bottom: 12px;
+
+    .pc-loginCard-countItems {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .pc-loginCard-countItems-number {
+        font-size: 18px;
+        line-height: 28.8px;
+        font-weight: 500;
+        color: #18191c;
+        cursor: pointer;
+      }
+
+      .pc-loginCard-countItems-title {
+        color: #9499a0;
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .pc-loginCard-vipCenter {
+    padding: 9px 12px;
+    background-image: url(../../../assets/images/user/渐变背景.png);
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .pc-loginCard-vipCenter-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pc-loginCard-vipCenter-right {
+      height: 26px;
+      padding: 3px 10px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+  }
+
+  .pc-loginCard-split {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+
+
+    .pc-loginCard-splitCards {
+      height: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 14px;
+      margin-bottom: 2px;
+
+      .pc-loginCard-splitCards-left {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 18px;
+          margin-right: 16px;
+        }
+
+        span {
+          color: #61666d;
+          white-space: nowrap;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .pc-loginCard-splitCards:hover {
+      background-color: #e3e5e7;
+      border-radius: 12px;
+    }
+  }
+
+  .spilt {
+    width: 100%;
+    height: 1px;
+    background-color: #e3e5e7;
+    margin: 10px 0;
+  }
+
+  .pc-loginCard-logout {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      margin-right: 16px;
+    }
+
+    span {
+      color: #61666d;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+  }
+
+  .pc-loginCard-logout:hover {
+    background-color: #e3e5e7;
+    border-radius: 12px;
+  }
 }
 
 .pc-loginCard-visible {
@@ -505,7 +669,7 @@
     top: 0;
     left: 0;
     z-index: 999;
-    color: #ffffff;
+    color: #e3e5e7;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -648,7 +812,7 @@
           }
         }
 
-        svg {
+        .right-entry-icon {
           width: 20px;
           height: 20px;
         }

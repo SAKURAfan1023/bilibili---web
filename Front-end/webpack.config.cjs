@@ -62,7 +62,7 @@ const config = {
       },
       //打包图片文件，js文件需要单独引用
       {
-        test: /\.(png|jpg|gif|svg|jpeg|webp)$/i,
+        test: /\.(png|jpg|gif|svg|jpeg|webp|avif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'assets/imgs/[hash][ext][query]'
