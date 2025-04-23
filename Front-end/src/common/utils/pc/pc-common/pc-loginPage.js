@@ -16,12 +16,11 @@ import img4 from '../../../../assets/images/logo/33_open.f7d7f655.png'
 
 
 export function hideTheLoginPage() {
-  // void document.querySelector('.pc-loginMask').offsetWidth
   document.querySelector('.pc-loginMask').style.opacity = '0'
   setTimeout(() => { document.querySelector('.pc-loginMask').style.display = 'none' }, 300)
 }
 
-function openTheLoginPage() {
+export function openTheLoginPage() {
   document.querySelector('.pc-loginMask').style.display = 'block'
   requestAnimationFrame(() => { document.querySelector('.pc-loginMask').style.opacity = '1' })
 }

@@ -354,6 +354,7 @@
   border: 1px solid #e3e5e7;
   border-radius: 8px;
   background-color: #fff;
+  z-index: 999;
 }
 .pc-loginCard .pc-loginCard-content {
   padding: 22px 20px 22px 20px;
@@ -402,6 +403,11 @@
 }
 .pc-loginCard .pc-loginCard-content .pc-loginCard-content4 span {
   color: black;
+}
+.pc-loginCard-info {
+  width: 302px;
+  height: 455px;
+  bottom: -455px;
 }
 .pc-loginCard-visible {
   opacity: 1;
@@ -530,6 +536,9 @@
   font-size: 14px;
   border-radius: 50%;
   text-align: center;
+  overflow: hidden;
+  transition: scale 0.3s;
+  z-index: 1000;
 }
 .pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-infPopover .pc-index-header-imgBorder span {
   font-size: inherit;

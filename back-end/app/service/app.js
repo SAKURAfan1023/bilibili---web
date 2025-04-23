@@ -1,9 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import mysql from 'mysql2'
+import { expressjwt } from 'express-jwt'
 
 import user from '../router/user-login.js'
 
+const secretKey = 'HuLiFan (>w<)'
 const app = express()
 const db = mysql.createPool({           //建立连接关系
   host: '127.0.0.1',   //数据库的IP地址
@@ -18,9 +20,11 @@ app.locals.db = db
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(expressjwt({ secret: secretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\//] }))
 
 app.use('/api', user.sendUserInfo)
 app.use('/api', user.getUserInfo)
+app.use('/admin', user.verifyToken)
 
 
 

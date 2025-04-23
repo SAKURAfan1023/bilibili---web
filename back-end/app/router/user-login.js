@@ -1,6 +1,5 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
-import { expressjwt } from 'express-jwt'
 
 
 const secretKey = 'HuLiFan (>w<)'
@@ -40,7 +39,6 @@ const sendUserInfo = router.post('/user/signup', (req, res) => {
     }
   })
 })
-
 
 
 
@@ -85,7 +83,18 @@ const getUserInfo = router.post('/user/signin', (req, res) => {
   })
 })
 
+
+const verifyToken = router.post('/user/verify', (req, res) => {
+  let message = '自动登录成功'
+  res.send({
+    status: 0,
+    message,
+    data: req.auth
+  })
+})
+
 export default {
   sendUserInfo,
-  getUserInfo
+  getUserInfo,
+  verifyToken
 }
