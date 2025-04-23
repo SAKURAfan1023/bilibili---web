@@ -15,7 +15,7 @@ import img3 from '../../../../assets/images/logo/22_open.4ea5f239.png'
 import img4 from '../../../../assets/images/logo/33_open.f7d7f655.png'
 
 
-function hideTheLoginPage() {
+export function hideTheLoginPage() {
   // void document.querySelector('.pc-loginMask').offsetWidth
   document.querySelector('.pc-loginMask').style.opacity = '0'
   setTimeout(() => { document.querySelector('.pc-loginMask').style.display = 'none' }, 300)
