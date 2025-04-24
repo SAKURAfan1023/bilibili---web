@@ -3,7 +3,9 @@ import cors from 'cors'
 import mysql from 'mysql2'
 import { expressjwt } from 'express-jwt'
 
+
 import user from '../router/user-login.js'
+import { getBasicInfo } from '../router/video-basicInfo.js'
 
 const secretKey = 'HuLiFan (>w<)'
 const app = express()
@@ -20,12 +22,13 @@ app.locals.db = db
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded())
-app.use(expressjwt({ secret: secretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\//] }))
+app.use(expressjwt({ secret: secretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\/|^\/uploads\//] }))
 
 app.use('/api', user.sendUserInfo)
 app.use('/api', user.getUserInfo)
 app.use('/admin', user.verifyToken)
-
+app.use('/uploads', express.static('public'))
+app.use('/api', getBasicInfo)
 
 
 
