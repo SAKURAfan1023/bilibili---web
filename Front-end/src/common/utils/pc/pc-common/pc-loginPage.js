@@ -25,7 +25,7 @@ export function openTheLoginPage() {
   requestAnimationFrame(() => { document.querySelector('.pc-loginMask').style.opacity = '1' })
 }
 
-function changeTheWay() {
+export function changeTheWay() {
   tabPassword.addEventListener('click', () => {
     if (tabCode.classList.contains('active')) tabCode.classList.remove('active')
     tabPassword.classList.add('active')
@@ -40,7 +40,7 @@ function changeTheWay() {
   })
 }
 
-function passwordChange() {
+export function passwordChange() {
   passwords[0].addEventListener('input', () => {
     passwords[0].type = 'password'
   })
@@ -58,7 +58,7 @@ function passwordChange() {
   })
 }
 
-function changeTheBackground() {
+export function changeTheBackground() {
   passwords.forEach(item => {
     item.addEventListener('focus', () => {
       page.style.backgroundImage = `url(${img1}),url(${img2})`
@@ -82,7 +82,4 @@ function changeTheBackground() {
 changeTheWay()
 passwordChange()
 changeTheBackground()
-document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.addEventListener('click', openTheLoginPage) })
-document.querySelectorAll('.pc-loginCard-content4-button').forEach(item => { item.addEventListener('click', openTheLoginPage) })
-document.querySelectorAll('.pc-loginCard-content3').forEach(item => { item.addEventListener('click', openTheLoginPage) })
 closeButton.addEventListener('click', hideTheLoginPage)

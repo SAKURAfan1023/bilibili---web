@@ -5,33 +5,40 @@ import { clearAllTimeouts } from './pc-loginPop.js';
 import { showCard2 } from './pc-loginPop.js';
 import { hideCard2 } from './pc-loginPop.js';
 import { showCard } from './pc-loginPop.js';
-import { hideCard } from './pc-loginPop.js';
+import { hideCard } from './pc-loginPop.js'
+import { logout } from './pc-logout.js';
+import { loginRender } from './pc-loginRender.js';
 
 const triggers = document.querySelectorAll('.pc-index-header-imgBorder')
 const cards = document.querySelectorAll('.pc-loginCard')
-if (localStorage.getItem('token')) {
-  axios({
-    url: 'http://127.0.0.1/admin/user/verify',
-    method: 'post'
-  }).then((result) => {
-    console.log(result);
-    document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.removeEventListener('click', openTheLoginPage) })
-    document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.innerHTML = `<img src="${img}" style="width: 100%;">` })
-    document.querySelectorAll('.pc-loginCard').forEach(item => { item.classList.add('pc-loginCard-info') })
 
-    triggers.forEach(item => item.removeEventListener('mouseenter', showCard))
-    triggers.forEach(item => item.removeEventListener('mouseleave', hideCard))
+export function autoLog() {
+  if (localStorage.getItem('token')) {
+    axios.interceptors.request.use(config => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        config.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('token'))}`; // 动态注入 token
+      }
+      return config;
+    });
+    axios({
+      url: 'http://127.0.0.1/admin/user/verify',
+      method: 'post'
+    }).then((result) => {
+      console.log(result);
+      document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.removeEventListener('click', openTheLoginPage) })
+      document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.innerHTML = `<img src="${img}" style="width: 100%;">` })
+      document.querySelectorAll('.pc-loginCard').forEach(item => { item.classList.add('pc-loginCard-info') })
 
-    cards.forEach(item => item.removeEventListener('mouseenter', clearAllTimeouts))
-    cards.forEach(item => item.removeEventListener('mouseleave', hideCard))
+      triggers.forEach(item => item.removeEventListener('mouseenter', showCard))
+      triggers.forEach(item => item.removeEventListener('mouseleave', hideCard))
+      cards.forEach(item => item.removeEventListener('mouseleave', hideCard))
 
-    triggers.forEach(item => item.addEventListener('mouseenter', showCard2))
-    triggers.forEach(item => item.addEventListener('mouseleave', hideCard2))
-
-    cards.forEach(item => item.addEventListener('mouseenter', clearAllTimeouts))
-    cards.forEach(item => item.addEventListener('mouseleave', hideCard2))
-    document.querySelectorAll('.pc-loginCard').forEach(item => {
-      item.innerHTML = `
+      triggers.forEach(item => item.addEventListener('mouseenter', showCard2))
+      triggers.forEach(item => item.addEventListener('mouseleave', hideCard2))
+      cards.forEach(item => item.addEventListener('mouseleave', hideCard2))
+      document.querySelectorAll('.pc-loginCard').forEach(item => {
+        item.innerHTML = `
       <div class="pc-loginCard-nickName">
                 <span>默认用户昵称</span>
               </div>
@@ -156,7 +163,14 @@ if (localStorage.getItem('token')) {
                 <span>退出登录</span>
               </div>
       `})
-  }).catch((err) => {
-    console.log(err.message);
-  })
+
+      logout()
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  } else {
+    loginRender()
+  }
 }
+
+autoLog()
