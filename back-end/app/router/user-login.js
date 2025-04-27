@@ -1,16 +1,23 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
+import { Joi, validateBody } from 'express-joi-validations';
 
 
 const secretKey = 'HuLiFan (>w<)'
 const router = express.Router()
+const postBody = Joi.object({
+  userName: Joi.string().required().min(5).max(16).regex(/^[a-zA-Z0-9-_]+$/),
+  passWord: Joi.string().required().min(5).max(16).regex(/^[a-zA-Z0-9-_]+$/)
+})
 
 //注册
-const sendUserInfo = router.post('/user/signup', (req, res) => {
+const sendUserInfo = router.post('/user/signup', validateBody(postBody), (req, res) => {
   const db = req.app.locals.db
   const postStr = 'insert into user set ?'
   const body = req.body
+  body.userName = body.userName + ''
+  body.passWord = body.passWord + ''
   body.passWord = bcrypt.hashSync(body.passWord, 5)
   let message
   let status = 1
@@ -45,9 +52,11 @@ const sendUserInfo = router.post('/user/signup', (req, res) => {
 
 
 //登录
-const getUserInfo = router.post('/user/signin', (req, res) => {
+const getUserInfo = router.post('/user/signin', validateBody(postBody), (req, res) => {
   const db = req.app.locals.db
   const body = req.body
+  body.userName = string(body.userName)
+  body.passWord = string(body.passWord)
   let status = 0
   let message
   const signinStr = 'select * from user where username = ?'

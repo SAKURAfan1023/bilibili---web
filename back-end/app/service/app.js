@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mysql from 'mysql2'
 import { expressjwt } from 'express-jwt'
+import { expressJoiValidations, Joi } from 'express-joi-validations';
 
 
 import user from '../router/user-login.js'
@@ -22,6 +23,7 @@ app.locals.db = db
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(expressJoiValidations({ throwErrors: true }));
 app.use(expressjwt({ secret: secretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\/|^\/uploads\//] }))
 
 app.use('/api', user.sendUserInfo)
@@ -32,6 +34,14 @@ app.use('/api', getBasicInfo)
 
 
 
+app.use((err, req, res, next) => {
+  if (err) {
+    return res.send({
+      status: 1,
+      message: err.message
+    })
+  }
+})
 
 app.listen(80, () => {
   console.log('服务器运行在http://127.0.0.1');
