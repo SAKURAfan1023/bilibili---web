@@ -9,7 +9,8 @@ const config = {
   //设置文件入口
   entry: {
     'pc-index': './src/pages/pc/index/pc-index.js',
-    'm-index': './src/pages/m/index/m-index.js'
+    'm-index': './src/pages/m/index/m-index.js',
+    'pc-contribute': './src/pages/pc/contribute/pc-contribute.js'
   },
   //设置文件出口
   output: {
@@ -31,6 +32,13 @@ const config = {
     template: path.resolve(__dirname, './src/pages/m/index/m-index.html'),
     filename: path.resolve(__dirname, './dist/pages/m-index/index.html'),
     chunks: ['m-index'],
+    useCdn: process.env.NODE_ENV === 'production' // 示例条件
+  }),
+
+  new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, './src/pages/pc/contribute/pc-contribute.html'),
+    filename: path.resolve(__dirname, './dist/pages/pc-contribute/index.html'),
+    chunks: ['pc-contribute'],
     useCdn: process.env.NODE_ENV === 'production' // 示例条件
   }),
 
