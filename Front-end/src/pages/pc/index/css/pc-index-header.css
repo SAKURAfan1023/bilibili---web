@@ -696,14 +696,20 @@
 .pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-upload div {
   width: 90px;
   height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #fb7299;
   border-radius: 8px;
   margin-left: 18px;
 }
-.pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-upload div svg {
+.pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-upload div a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pc-index-largeHeader .pc-index-header .pc-index-header-right .pc-index-header-upload div a svg {
   height: 18px;
   width: 18px;
 }
@@ -722,6 +728,36 @@
   fill: #00AEEC;
   margin-left: 20px;
   cursor: pointer;
+}
+.pc-index-largeHeader .pc-index-fixedHeader .pc-index-header-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.pc-index-largeHeader .pc-index-fixedHeader .pc-index-header-upload div {
+  width: 90px;
+  height: 34px;
+  background-color: #fb7299;
+  border-radius: 8px;
+  margin-left: 18px;
+}
+.pc-index-largeHeader .pc-index-fixedHeader .pc-index-header-upload div a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pc-index-largeHeader .pc-index-fixedHeader .pc-index-header-upload div a svg {
+  color: #fff;
+  height: 18px;
+  width: 18px;
+}
+.pc-index-largeHeader .pc-index-fixedHeader .pc-index-header-upload div a span {
+  color: #fff;
 }
 .pc-index-largeHeader .pc-index-fixedHeader svg {
   color: black;
