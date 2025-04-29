@@ -1,5 +1,6 @@
 import { hideTheLoginPage } from "./pc-loginPage.js"
 import { autoLog } from "./pc-loginAuto.js"
+import { changeTheContribute } from "../index/pc-index-openTheLoginPage.js"
 const signup = document.querySelector('.pc-login-right-inputButton-left')
 const signin = document.querySelector('.pc-login-right-inputButton-right')
 const form1 = document.querySelector('.pc-login-form-password')
@@ -16,9 +17,10 @@ if (localStorage.getItem('token')) {
 
 //登录
 signin.addEventListener('click', (e) => {
-
   e.preventDefault()
   const data = serialize(form1, { hash: true, empty: true })
+  console.log(1);
+
   axios({
     url: 'http://127.0.0.1/api/user/signin',
     method: 'POST',
@@ -39,6 +41,7 @@ signin.addEventListener('click', (e) => {
         autoLog()
         div.remove()
         document.querySelector('.pc-login').style.display = 'flex'
+        changeTheContribute()
       }, 1000);
     }
   }).catch((err) => {

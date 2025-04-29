@@ -8,6 +8,7 @@ import { showCard } from './pc-loginPop.js';
 import { hideCard } from './pc-loginPop.js'
 import { logout } from './pc-logout.js';
 import { loginRender } from './pc-loginRender.js';
+import { changeTheContribute } from '../index/pc-index-openTheLoginPage.js';
 
 const triggers = document.querySelectorAll('.pc-index-header-imgBorder')
 const cards = document.querySelectorAll('.pc-loginCard')
@@ -37,6 +38,9 @@ export function autoLog() {
       triggers.forEach(item => item.addEventListener('mouseenter', showCard2))
       triggers.forEach(item => item.addEventListener('mouseleave', hideCard2))
       cards.forEach(item => item.addEventListener('mouseleave', hideCard2))
+
+      changeTheContribute()
+
       document.querySelectorAll('.pc-loginCard').forEach(item => {
         item.innerHTML = `
       <div class="pc-loginCard-nickName">
@@ -164,6 +168,7 @@ export function autoLog() {
               </div>
       `})
 
+
       logout()
     }).catch((err) => {
       console.log(err.message);
@@ -172,5 +177,7 @@ export function autoLog() {
     loginRender()
   }
 }
+
+
 
 autoLog()

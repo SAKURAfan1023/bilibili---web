@@ -16,8 +16,8 @@ const sendUserInfo = router.post('/user/signup', validateBody(postBody), (req, r
   const db = req.app.locals.db
   const postStr = 'insert into user set ?'
   const body = req.body
-  body.userName = body.userName + ''
-  body.passWord = body.passWord + ''
+  body.userName = String(body.userName)
+  body.passWord = String(body.passWord)
   body.passWord = bcrypt.hashSync(body.passWord, 5)
   let message
   let status = 1
@@ -55,8 +55,8 @@ const sendUserInfo = router.post('/user/signup', validateBody(postBody), (req, r
 const getUserInfo = router.post('/user/signin', validateBody(postBody), (req, res) => {
   const db = req.app.locals.db
   const body = req.body
-  body.userName = string(body.userName)
-  body.passWord = string(body.passWord)
+  body.userName = String(body.userName)
+  body.passWord = String(body.passWord)
   let status = 0
   let message
   const signinStr = 'select * from user where username = ?'
