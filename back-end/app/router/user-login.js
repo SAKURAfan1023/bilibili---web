@@ -4,8 +4,9 @@ import bcrypt from 'bcrypt'
 import { Joi, validateBody } from 'express-joi-validations';
 
 
-const secretKey = 'HuLiFan (>w<)'
-const router = express.Router()
+const secretKey = 'HuLiFan (>w<)'//设置密钥
+const router = express.Router()//设置路由
+//定义表单准则
 const postBody = Joi.object({
   userName: Joi.string().required().min(5).max(16).regex(/^[a-zA-Z0-9-_]+$/),
   passWord: Joi.string().required().min(5).max(16).regex(/^[a-zA-Z0-9-_]+$/)
