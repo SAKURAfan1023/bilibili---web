@@ -23,7 +23,6 @@ signin.addEventListener('click', (e) => {
   e.preventDefault()
   //serialize获取表单数据打包为对象
   const data = serialize(form1, { hash: true, empty: true })
-  console.log(1);
   //axios向服务器发送POST请求来验证
   axios({
     url: 'http://127.0.0.1/api/user/signin',
@@ -54,7 +53,10 @@ signin.addEventListener('click', (e) => {
         document.querySelector('.pc-login').style.display = 'flex'
         //5.将投稿按钮设置为跳转页面
         changeTheContribute()
+        //登陆成功
       }, 1000);
+    } else {
+      alertMsg('您的账号或者密码错误')
     }
   }).catch((err) => {
     console.log(err.message);
@@ -73,5 +75,9 @@ signup.addEventListener('click', (e) => {
   }).then((result) => {
     // 返回相应结果
     console.log(result.data);
+    alertMsg(result.data.message)
+    if (result.data.status === 0) {
+      form1.reset()
+    }
   })
 })

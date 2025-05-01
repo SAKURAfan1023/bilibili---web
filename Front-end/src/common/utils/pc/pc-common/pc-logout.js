@@ -2,12 +2,14 @@ import { loginRender } from "./pc-loginRender.js"
 import { showCard2 } from './pc-loginPop.js';
 import { showCard } from './pc-loginPop.js';
 import { changeTheContributeBack } from "../index/pc-index-openTheLoginPage.js";
+import { alertMsg } from "./pc-alert.js";
 
 const triggers = document.querySelectorAll('.pc-index-header-imgBorder')
 
 //设置退出后，渲染初始画面
 export function logout() {
   document.querySelector('.pc-loginCard-logout').addEventListener('click', () => {
+    alertMsg('退出账号成功')
     //改变头像个人信息面板初始化
     //移除原始事件监听
     triggers.forEach(item => item.removeEventListener('mouseenter', showCard2))

@@ -44,7 +44,7 @@ const sendUserInfo = router.post('/user/signup', validateBody(postBody), (req, r
       status = 0
       return res.send({
         status,
-        message: '注册成功',
+        message: '恭喜您注册成功,请您再次登录',
         data: body
       })
     }

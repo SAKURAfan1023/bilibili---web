@@ -9,6 +9,7 @@ import { hideCard } from './pc-loginPop.js'
 import { logout } from './pc-logout.js';
 import { loginRender } from './pc-loginRender.js';
 import { changeTheContribute } from '../index/pc-index-openTheLoginPage.js';
+import { alertMsg } from './pc-alert.js';
 
 const triggers = document.querySelectorAll('.pc-index-header-imgBorder')
 const cards = document.querySelectorAll('.pc-loginCard')
@@ -26,6 +27,7 @@ export function autoLog() {
       url: 'http://127.0.0.1/admin/user/verify',
       method: 'post'
     }).then((result) => {
+      alertMsg('自动登录成功')
       console.log(result);
       document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.removeEventListener('click', openTheLoginPage) })
       document.querySelectorAll('.pc-index-header-imgBorder').forEach(item => { item.innerHTML = `<img src="${img}" style="width: 100%;">` })
