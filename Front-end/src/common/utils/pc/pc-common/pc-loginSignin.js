@@ -1,9 +1,11 @@
 import { hideTheLoginPage } from "./pc-loginPage.js"
 import { autoLog } from "./pc-loginAuto.js"
 import { changeTheContribute } from "../index/pc-index-openTheLoginPage.js"
+import { alertMsg } from "./pc-alert.js"
 const signup = document.querySelector('.pc-login-right-inputButton-left')
 const signin = document.querySelector('.pc-login-right-inputButton-right')
 const form1 = document.querySelector('.pc-login-form-password')
+
 
 if (localStorage.getItem('token')) {
   //设置axios拦截器，在axios发送之前为其添加token请求头
